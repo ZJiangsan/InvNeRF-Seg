@@ -60,6 +60,13 @@ python fruits_invNerfSeg_defaultSetting_defaultConfig_April2026_001.py
 
 Only `transforms.json` camera metadata is included in this repository. Image frames, masks, pretrained checkpoints, and point-cloud outputs should be released through an external archive or GitHub Release assets if appropriate.
 
+The apple and peach scenes used in the experiments are derived from the publicly available FruitNeRF dataset. Please cite the FruitNeRF paper and dataset when using those scenes:
+
+- FruitNeRF paper: <https://arxiv.org/abs/2408.06190>
+- FruitNeRF dataset archive: <https://zenodo.org/records/10869455>
+
+The soybean scenes are self-collected data from this InvNeRF-Seg study.
+
 ## Citation
 
 The manuscript is under review. Please cite this repository and the paper title until a final DOI/citation is available.

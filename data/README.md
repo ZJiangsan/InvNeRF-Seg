@@ -25,3 +25,10 @@ data/
     transforms.json
     images/
 ```
+
+The apple and peach scenes are derived from the publicly available FruitNeRF dataset:
+
+- FruitNeRF paper: <https://arxiv.org/abs/2408.06190>
+- FruitNeRF dataset archive: <https://zenodo.org/records/10869455>
+
+The soybean scenes are self-collected for the InvNeRF-Seg study.
