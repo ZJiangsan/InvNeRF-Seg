@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Local experiment outputs
+outputs/
+runs/
+wandb/
+*.log
+*.pdf
+
+# Large data/model artifacts; keep these in external releases or archives
+*.pth
+*.pt
+*.ckpt
+*.ply
+*.obj
+*.mtl
+data/**/images/
+data/**/semantics/
+data/**/masks/
+data/**/rgb/
+data/**/depth/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

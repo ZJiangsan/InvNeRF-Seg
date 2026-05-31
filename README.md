@@ -1,30 +1,65 @@
 # InvNeRF-Seg
 
-This repository contains code, pretrained model weights, and dataset for the paper:
+Code and experiment artifacts for the manuscript:
 
-"A Two-Stage Fine-Tuning Strategy for 3D Object Segmentation from Multi-View Images"
+**A Two-Stage Fine-Tuning Strategy for 3D Object Segmentation from Multi-View Images**
 
-## Dataset
+InvNeRF-Seg fine-tunes NeRF representations for 3D object segmentation from posed multi-view imagery. The current repository snapshot preserves the experiment scripts, camera metadata, IoU logs, and manuscript/result figures used for the submitted Smart Agricultural Technology manuscript.
 
-We provide a self-collected soybean dataset captured using an iPhone 12 Pro under natural outdoor lighting conditions. The data consists of multi-view images extracted from video recordings.
+![Graphical abstract](assets/figures/graphical_abstract.png)
 
-- Frames extracted at 5 FPS
-- Camera poses estimated using COLMAP
-- Masks generated using MobileSAM and manually verified
+## Repository Layout
 
-Tasks:
-1. Binary instance-level segmentation (single pod)
-2. Multi-instance segmentation (two pods)
+```text
+assets/figures/       Manuscript and experiment figures.
+data/                 Camera-pose metadata for the local datasets.
+docs/                 Inventories for included files and external artifacts.
+results/iou_logs/     Pickled IoU convergence logs used by plotting scripts.
+scripts/experiments/  Training, ablation, plotting, and point-cloud scripts.
+```
 
-## Contents
+Large trained checkpoints (`.pth`), dense point clouds (`.ply`), source images, masks, and mesh files are not committed because several files exceed GitHub's normal file-size limits. See [docs/artifacts.md](docs/artifacts.md) and [docs/artifact_inventory.csv](docs/artifact_inventory.csv) for the local artifact inventory.
 
-- `data/soybean_sample/`: sample images and masks
-- `weights/`: pretrained model weights (if available)
+## Included Experiments
 
-## Usage
+The scripts cover these experiment groups:
 
-Detailed instructions for reproducing experiments will be added.
+- InvNeRF-Seg training for apple, peach, and soybean scenes.
+- Two-stage fine-tuning ablations: full fine-tuning, mask-only, fine-tune color while freezing density, and fine-tune density while freezing color.
+- FruitNeRF and SA3D comparison baselines.
+- IoU convergence plotting.
+- 3D point-cloud generation, clustering, and counting.
 
-## Note
+The scripts were copied from the reproducibility workspace and still expect the datasets/checkpoints to be available beside the script or through the paths configured inside each script.
 
-Full dataset and complete training pipeline will be released.
+## Environment
+
+The experiments are built around Python, PyTorch, Nerfstudio, Open3D, OpenCV, NumPy, Matplotlib, Pillow, Rich, and jaxtyping. A minimal dependency list is provided in [requirements.txt](requirements.txt), but GPU/CUDA and Nerfstudio installation should follow the versions used by your local training environment.
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+```
+
+## Reproducing Local Runs
+
+1. Place the full datasets under directories matching the scene names in `data/`:
+   `appleTree`, `appleTreeSeg`, `peachTree`, `peachTreeSeg`, `soybeanRGB`, and `soybeanRGBSeg`.
+2. Restore trained checkpoints and generated point-cloud files from the external artifact bundle described in [docs/artifacts.md](docs/artifacts.md).
+3. Run the relevant script from `scripts/experiments/` in a CUDA-enabled environment.
+
+Example:
+
+```powershell
+cd scripts/experiments
+python fruits_invNerfSeg_defaultSetting_defaultConfig_April2026_001.py
+```
+
+## Data Availability
+
+Only `transforms.json` camera metadata is included in this repository. Image frames, masks, pretrained checkpoints, and point-cloud outputs should be released through an external archive or GitHub Release assets if appropriate.
+
+## Citation
+
+The manuscript is under review. Please cite this repository and the paper title until a final DOI/citation is available.
