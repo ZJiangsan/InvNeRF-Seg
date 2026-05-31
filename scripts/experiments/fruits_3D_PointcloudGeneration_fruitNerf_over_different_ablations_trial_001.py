@@ -692,7 +692,7 @@ for folder_i in folder_ls:
     data_config.train_split_fraction = 0.9
     # data_config.eval_model = "all"
     #
-    shit = Nerfstudio(data_config)
+    dataparser = Nerfstudio(data_config)
     ###
     
     # from nerfstudio.data.datamanagers.parallel_datamanager import ParallelDataManagerConfig, ParallelDataManager

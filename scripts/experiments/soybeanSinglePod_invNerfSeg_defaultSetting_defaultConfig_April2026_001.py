@@ -847,7 +847,7 @@ for tr_stg in [2]:
         data_config.train_split_fraction = 0.9
         # data_config.eval_mode = "all"
         #
-        shit = Nerfstudio(data_config)
+        dataparser = Nerfstudio(data_config)
         ###
         
         from nerfstudio.data.datamanagers.parallel_datamanager import ParallelDataManagerConfig, ParallelDataManager
@@ -863,10 +863,10 @@ for tr_stg in [2]:
         dataManager = ParallelDataManager(dataManager_config)
 
         #
-        # shit = Nerfstudio(data_config)
-        shit_val = shit._generate_dataparser_outputs('train')
-        shit_val.image_filenames
-        numbers_eval = [int(path.stem.split("_")[-1]) for path in shit_val.image_filenames]
+        # dataparser = Nerfstudio(data_config)
+        dataparser_outputs = dataparser._generate_dataparser_outputs('train')
+        dataparser_outputs.image_filenames
+        numbers_eval = [int(path.stem.split("_")[-1]) for path in dataparser_outputs.image_filenames]
         
         ## log the iou
         iou_log = []

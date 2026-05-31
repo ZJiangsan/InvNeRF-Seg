@@ -11,11 +11,7 @@ The local reproducibility folder contains trained model checkpoints, dense point
 
 ## Local Source
 
-The artifacts were inventoried from:
-
-```text
-D:\InvNerf_seg_relatedScripts
-```
+The artifacts were inventoried from the local reproducibility workspace used to prepare this repository.
 
 See [artifact_inventory.csv](artifact_inventory.csv) for file names and sizes.
 

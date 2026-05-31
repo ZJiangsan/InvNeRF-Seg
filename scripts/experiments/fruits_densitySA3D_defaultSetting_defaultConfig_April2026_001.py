@@ -612,7 +612,7 @@ data_config.downscale_factor = 1
 data_config.train_split_fraction = 0.99
 data_config.eval_mode = 'all'
 #
-shit = Nerfstudio(data_config)
+dataparser = Nerfstudio(data_config)
 ###
 
 # from nerfstudio.data.datamanagers.parallel_datamanager import ParallelDataManagerConfig, ParallelDataManager
@@ -817,7 +817,7 @@ with progress as progress_bar:
 
 
 
-# o3d.io.write_point_cloud("shit_005.ply", pcd)
+# o3d.io.write_point_cloud("scratch_005.ply", pcd)
 
 for pcd_name in pcd_list.keys():
     pcd = pcd_list[pcd_name]['pcd']

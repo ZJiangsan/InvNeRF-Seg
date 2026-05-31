@@ -712,8 +712,8 @@ for image_name in img_ls_out:
 images_out = np.array(images_out)
 masks_out = np.array(masks_out)
 ###
-# shit = "FruitNeRF_Synthetic/semantics/0299.png"
-# mask = Image.open(shit)
+# dataparser = "FruitNeRF_Synthetic/semantics/0299.png"
+# mask = Image.open(dataparser)
 # mask_array = np.array(mask)
 # #
 # plt.figure()
@@ -822,7 +822,7 @@ data_config.downscale_factor = 1
 data_config.train_split_fraction = 0.99
 data_config.eval_model = "all"
 #
-shit = Nerfstudio(data_config)
+dataparser = Nerfstudio(data_config)
 ###
 
 # from nerfstudio.data.datamanagers.parallel_datamanager import ParallelDataManagerConfig, ParallelDataManager

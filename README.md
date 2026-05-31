@@ -30,7 +30,7 @@ The scripts cover these experiment groups:
 - IoU convergence plotting.
 - 3D point-cloud generation, clustering, and counting.
 
-The scripts were copied from the reproducibility workspace and still expect the datasets/checkpoints to be available beside the script or through the paths configured inside each script.
+The scripts were copied from the reproducibility workspace and still expect the datasets/checkpoints to be available beside the script or through the paths configured inside each script. They are archival experiment scripts rather than packaged command-line tools; scene selection and ablation settings are usually controlled by variables such as `folder_ls`, `folder_i`, `loss_type`, and `checkpoint_path` near the bottom of each file.
 
 ## Environment
 
