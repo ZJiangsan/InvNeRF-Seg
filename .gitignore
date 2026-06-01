@@ -19,6 +19,9 @@ wandb/
 *.pth
 *.pt
 *.ckpt
+!weights/
+!weights/soybean/
+!weights/soybean/*.pth
 *.ply
 *.obj
 *.mtl

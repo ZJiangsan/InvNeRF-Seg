@@ -20,6 +20,12 @@ scripts/experiments/  Training, ablation, plotting, and point-cloud scripts.
 
 Large trained checkpoints (`.pth`), dense point clouds (`.ply`), source images, masks, and mesh files are not committed because several files exceed GitHub's normal file-size limits. See [docs/artifacts.md](docs/artifacts.md) and [docs/artifact_inventory.csv](docs/artifact_inventory.csv) for the local artifact inventory.
 
+The trained soybean checkpoints are provided through Git LFS under `weights/soybean/`:
+
+- `soybean_rgb_nerfacto_128.pth`
+- `soybean_singlepod_invnerf_128.pth`
+- `soybean_doublepod_invnerf_128.pth`
+
 ## Included Experiments
 
 The scripts cover these experiment groups:

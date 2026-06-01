@@ -9,6 +9,8 @@ The local reproducibility folder contains trained model checkpoints, dense point
 - `*.obj` and `*.mtl`: scene meshes.
 - Dataset image folders and mask/semantic folders.
 
+Exception: the three soybean manuscript checkpoints are tracked with Git LFS in `weights/soybean/`.
+
 ## Local Source
 
 The artifacts were inventoried from the local reproducibility workspace used to prepare this repository.
